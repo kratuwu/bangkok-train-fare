@@ -41,6 +41,7 @@
   "edges": [
     ["BL01", "BL33"],
     ["BL10", "PP16"],
+    ["BL13", "N8"],
     ["YL01", "BL15"],
     ["PK10", "MT01"],
     ["PP11", "PK01"],
@@ -56,6 +57,8 @@
   "aliases": {
     "BL10": "TAOPOON",
     "PP16": "TAOPOON",
+    "BL13": "CHATUCHAK_MOCHIT",
+    "N8": "CHATUCHAK_MOCHIT",
     "BL15": "LARDPRAO",
     "YL01": "LARDPRAO",
     "BL22": "ASOK",

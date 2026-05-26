@@ -18,6 +18,9 @@ describe("graph", () => {
     expect(GRAPH.BL10).toContain("PP16");
     expect(GRAPH.PP16).toContain("BL10");
 
+    expect(GRAPH.BL13).toContain("N8");
+    expect(GRAPH.N8).toContain("BL13");
+
     expect(GRAPH.PK10).toContain("MT01");
     expect(GRAPH.MT01).toContain("PK10");
   });
@@ -25,6 +28,8 @@ describe("graph", () => {
   it("normalizes station aliases shared by interchanges", () => {
     expect(normalize("BL10")).toBe("TAOPOON");
     expect(normalize("PP16")).toBe("TAOPOON");
+    expect(normalize("BL13")).toBe("CHATUCHAK_MOCHIT");
+    expect(normalize("N8")).toBe("CHATUCHAK_MOCHIT");
     expect(normalize("E4")).toBe("ASOK");
     expect(normalize("UNKNOWN")).toBe("UNKNOWN");
   });
