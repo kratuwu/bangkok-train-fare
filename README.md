@@ -32,7 +32,7 @@ console.log(stations);
 
 The repository includes GitHub Actions workflows for CI, snapshot packages, and stable releases.
 
-Snapshots are published with the `snapshot` npm dist-tag by manually running the `Publish Snapshot` workflow:
+Snapshots are published with the `snapshot` npm dist-tag by manually running the `Publish` workflow with `channel=snapshot`:
 
 ```bash
 npm install bangkok-train-fare@snapshot
@@ -45,4 +45,9 @@ npm version patch
 git push origin main --tags
 ```
 
-Publishing supports npm trusted publishing through GitHub Actions OIDC. Configure the package on npm with the matching workflow file, or add an `NPM_TOKEN` repository secret as a fallback.
+Publishing uses npm trusted publishing through GitHub Actions OIDC. Configure the package on npm with:
+
+- Owner: `kratuwu`
+- Repository: `bangkok-train-fare`
+- Workflow filename: `publish.yml`
+- Environment: `npm`
