@@ -1,0 +1,55 @@
+{
+  "name": "bangkok-train-fare",
+  "version": "0.1.0",
+  "description": "TypeScript utilities for Bangkok train station lookup, route building, and fare estimation.",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kratuwu/bangkok-train-fare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kratuwu/bangkok-train-fare/issues"
+  },
+  "homepage": "https://github.com/kratuwu/bangkok-train-fare#readme",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./fare": {
+      "types": "./dist/fare/index.d.ts",
+      "import": "./dist/fare/index.js"
+    },
+    "./station": {
+      "types": "./dist/station/index.d.ts",
+      "import": "./dist/station/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "bangkok",
+    "train",
+    "fare",
+    "bts",
+    "mrt",
+    "typescript"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "fuse.js": "^7.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vitest": "^1.3.0"
+  }
+}

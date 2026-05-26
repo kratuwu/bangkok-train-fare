@@ -1,0 +1,68 @@
+{
+  "lines": [
+    {
+      "name": "blue",
+      "ranges": [
+        { "prefix": "BL", "start": 1, "end": 32, "cyclic": true },
+        { "prefix": "BL", "start": 33, "end": 38 }
+      ]
+    },
+    {
+      "name": "purple",
+      "ranges": [{ "prefix": "PP", "start": 1, "end": 16 }]
+    },
+    {
+      "name": "yellow",
+      "ranges": [{ "prefix": "YL", "start": 1, "end": 23 }]
+    },
+    {
+      "name": "pink",
+      "ranges": [
+        { "prefix": "MT", "start": 1, "end": 2 },
+        { "prefix": "PK", "start": 1, "end": 30 }
+      ]
+    },
+    {
+      "name": "orange",
+      "prefixes": ["OL"],
+      "ranges": []
+    },
+    {
+      "name": "green",
+      "stations": ["CEN", "W1"],
+      "ranges": [
+        { "prefix": "N", "start": 1, "end": 5, "padCode": false },
+        { "prefix": "N", "start": 7, "end": 24, "padCode": false },
+        { "prefix": "E", "start": 1, "end": 23, "padCode": false },
+        { "prefix": "S", "start": 1, "end": 12, "padCode": false }
+      ]
+    }
+  ],
+  "edges": [
+    ["BL01", "BL33"],
+    ["BL10", "PP16"],
+    ["YL01", "BL15"],
+    ["PK10", "MT01"],
+    ["PP11", "PK01"],
+    ["N5", "N7"],
+    ["N1", "CEN"],
+    ["CEN", "E1"],
+    ["W1", "CEN"],
+    ["CEN", "S1"],
+    ["E4", "BL22"],
+    ["S2", "BL26"],
+    ["E15", "YL23"]
+  ],
+  "aliases": {
+    "BL10": "TAOPOON",
+    "PP16": "TAOPOON",
+    "BL15": "LARDPRAO",
+    "YL01": "LARDPRAO",
+    "BL22": "ASOK",
+    "E4": "ASOK",
+    "BL26": "SALDAENG",
+    "S2": "SALDAENG",
+    "E15": "SAMRONG",
+    "YL23": "SAMRONG"
+  }
+}
