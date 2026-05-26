@@ -51,7 +51,8 @@ jobs:
           fi
 
           BASE_VERSION=$(node -p "require('./package.json').version.replace(/-.*/, '')")
-          SNAPSHOT_VERSION="${BASE_VERSION}-snapshot.${GITHUB_RUN_NUMBER}.${GITHUB_RUN_ATTEMPT}"
+          SHORT_SHA="${GITHUB_SHA::7}"
+          SNAPSHOT_VERSION="${BASE_VERSION}-snapshot.${SHORT_SHA}"
           npm version "$SNAPSHOT_VERSION" --no-git-tag-version
           echo "NPM_TAG=snapshot" >> "$GITHUB_ENV"
           echo "Publishing snapshot version $SNAPSHOT_VERSION"

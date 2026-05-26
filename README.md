@@ -38,6 +38,8 @@ Snapshots are published with the `snapshot` npm dist-tag by manually running the
 npm install bangkok-train-fare@snapshot
 ```
 
+Snapshot versions include the source commit, for example `0.1.0-snapshot.289d6fb`.
+
 Stable releases are published by updating `package.json` version, committing it, and pushing a matching tag:
 
 ```bash
