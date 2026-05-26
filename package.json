@@ -33,8 +33,10 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "pack:dry-run": "npm pack --dry-run",
     "prepublishOnly": "npm run build",
-    "test": "vitest run"
+    "test": "vitest run",
+    "verify": "npm run build && npm test && npm run pack:dry-run"
   },
   "keywords": [
     "bangkok",

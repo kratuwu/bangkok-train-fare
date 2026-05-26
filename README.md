@@ -32,7 +32,7 @@ console.log(stations);
 
 The repository includes GitHub Actions workflows for CI, snapshot packages, and stable releases.
 
-Snapshots are published with the `snapshot` npm dist-tag by manually running the `Publish` workflow with `channel=snapshot`:
+Snapshots are published with the `snapshot` npm dist-tag by manually running the `Publish` workflow:
 
 ```bash
 npm install bangkok-train-fare@snapshot
