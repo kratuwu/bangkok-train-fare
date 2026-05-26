@@ -44,6 +44,6 @@ jobs:
           echo "Publishing snapshot version $SNAPSHOT_VERSION"
 
       - name: Publish snapshot
-        run: npm publish --tag snapshot --provenance
+        run: npm publish --access public --tag snapshot --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

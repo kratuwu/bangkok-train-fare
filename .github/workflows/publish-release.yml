@@ -50,6 +50,6 @@ jobs:
           fi
 
       - name: Publish release
-        run: npm publish --tag latest --provenance
+        run: npm publish --access public --tag latest --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
