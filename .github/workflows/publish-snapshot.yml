@@ -1,0 +1,49 @@
+name: Publish Snapshot
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: publish-snapshot
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish snapshot package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+      - name: Set snapshot version
+        run: |
+          BASE_VERSION=$(node -p "require('./package.json').version.replace(/-.*/, '')")
+          SNAPSHOT_VERSION="${BASE_VERSION}-snapshot.${GITHUB_RUN_NUMBER}.${GITHUB_RUN_ATTEMPT}"
+          npm version "$SNAPSHOT_VERSION" --no-git-tag-version
+          echo "Publishing snapshot version $SNAPSHOT_VERSION"
+
+      - name: Publish snapshot
+        run: npm publish --tag snapshot --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
